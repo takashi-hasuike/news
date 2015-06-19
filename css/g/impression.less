@@ -1,0 +1,44 @@
+// main: ../g.less
+.box-shadow(@shadow) {
+    //
+    -moz-box-shadow: @shadow;
+    //
+    -webkit-box-shadow: @shadow;
+    //
+    box-shadow: @shadow;
+}
+
+.text-shadow(@shadow) {
+    //
+    -moz-text-shadow: @shadow;
+    //
+    -webkit-text-shadow: @shadow;
+    //
+    text-shadow: @shadow;
+}
+
+.deboss {
+    //
+    @deboss: inset 0 1px 0 rgba(0, 0, 0, .2), inset 0 0 3px rgba(0, 0, 0, .1), 0 1px 3px rgba(255, 255, 255, .1);
+    //
+    .box-shadow(@deboss);
+}
+
+.emboss {
+    //
+    @emboss: 0 1px 0 rgba(0, 0, 0, .2), 0 0 3px rgba(0, 0, 0, .1), inset 0 1px 3px rgba(255, 255, 255, .1);
+    //
+    .box-shadow(@emboss);
+}
+
+.luster {
+    //
+    @luster: 0 0 .1em rgba(255, 255, 255, .8), 0 0 .2em rgba(255, 255, 255, .2), 0 0 .8em rgba(255, 255, 255, .1);
+    //
+    .text-shadow(@luster);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}

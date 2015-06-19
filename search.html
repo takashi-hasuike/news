@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <!---->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+        <link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet'>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/command.css" rel="stylesheet">
+        <!---->
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="description" content="">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="maximum-scale=1.0,width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <!---->
+        <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.1.0/riot.min.js"></script>
+        <script src="js/mist.min.js"></script>
+        <script src="js/libs/assign.js"></script>
+        <script src="js/tags.js"></script>
+        <script src="js/libs/news_api_client.js"></script>
+        <!---->
+        <style>
+            body {
+                font-family: 'Open Sans', Meiryo, sans-serif;
+                width: 100%;
+                height: 100%;
+                background-color: #f0f0f0;
+            }
+            body > div {
+                box-sizing: border-box;
+                height: 100%;
+                width: 100%;
+            }
+
+            section.search-articles {
+                margin: 1em;
+            }
+
+            section.search-articles div.divider {
+                margin: 1em 0;
+                border-bottom: 1px dashed gray;
+            }
+            footer.search-footer {
+                position: absolute;
+                margin-bottom: 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <logo-header class="hide"></logo-header>
+            <!---->
+            <search-header class="hide"></search-header>
+            <section class="search-articles">
+                <!--<articles class='hide columns-3' overflow='hidden'></articles>-->
+            </section>
+            <searching class="hide"></searching>
+            <search-paginate class="hide"></search-paginate>
+        </div>
+        <search-keyword class="whiteness lampblack-background hide"></search-keyword>
+
+        <!---->
+        <footer class="search-footer hide"></footer>
+        <site-menu></site-menu>
+        <script src="js/search.js"></script>
+    </body>
+</html>

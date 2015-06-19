@@ -1,0 +1,638 @@
+// main: ../g.less
+.color(@c) {
+    @contrast: contrast(@c, @lampblack, @snowwhite, 66.7%);
+    @shadow: @c 1px 1px 1px, @c 1px -1px 1px, @c -1px -1px 1px, @c -1px 1px 1px;
+    color: @c;
+    &.active:active, &.hover:hover {
+        color: @contrast;
+    }
+    &.fill {
+        background-color: @c;
+        color: @contrast;
+    }
+    &.outline {
+        color: @contrast;
+        -moz-text-shadow: @shadow;
+        -webkit-text-shadow: @shadow;
+        text-shadow: @shadow;
+    }
+    &.translucent {
+        background-color: fade(@c, 40%);
+        color: @contrast;
+    }
+}
+
+@amber: #aa7a40;
+@applegreen: #a2d29e;
+@apricot: #d89f6d;
+@ashgrey: #8f8f8f;
+@babyblue: #a3bacd;
+@babypink: #fec6c5;
+@beige: #bca78d;
+@billiardgreen: #00483a;
+@black: #000;
+@blond: #f6a57d;
+@blue: #006fab;
+@bordeaux: #533638;
+@bottlegreen: #204537;
+@bronze: #7a592f;
+@brown: #6d4c33;
+@buff: #c09567;
+@burgundy: #442e31;
+@burntsienna: #a2553c;
+@burntumber: #57462d;
+@canaryyellow: #edd634;
+@carmine: #be0039;
+@carrotorange: #c55431;
+@ceruleanblue: #0073a2;
+@charcoalgrey: #4b474d;
+@chartreusegreen: #c0d136;
+@cherrypink: #d35889;
+@chinesered: #fd5a2a;
+@chocolate: #503830;
+@chromeyellow: #f6bf00;
+@cobaltblue: #0062a0;
+@cobaltgreen: #09c289;
+@cochinealred: #ae2b52;
+@cocoabrown: #704b38;
+@coralred: #ff7f8f;
+@cork: #9f7c5c;
+@creamyellow: #e4d3a2;
+@cyan: #009cd1;
+@ecrubeige: #f5cda6;
+@emeraldgreen: #00a474;
+@forestgreen: #2a7762;
+@goldenyellow: #e89a3c;
+@grassgreen: #737c3e;
+@green: #009a57;
+@grey: #767676;
+@heliotrope: #8865b2;
+@horizonblue: #87afc5;
+@hyacinth: #6e82ad;
+@ironblue: #3a4861;
+@ivory: #ded2bf;
+@ivygreen: #4c6733;
+@jaunebrillant: #f4d500;
+@khaki: #92723a;
+@lampblack: #212121;
+@lavender: #9a8a9f;
+@leafgreen: #89983b;
+@leghorn: #dfc291;
+@lemonyellow: #d9ca00;
+@lilac: #c29dc8;
+@magenta: #d13a84;
+@malachitegreen: #007e4e;
+@mandarinorange: #f09629;
+@marigold: #ffa400;
+@marineblue: #00526b;
+@maroon: #662b2c;
+@mauve: #855896;
+@midnightblue: #252a35;
+@mintgreen: #58ce91;
+@nailpink: #efbaa8;
+@naplesyellow: #eec063;
+@navyblue: #343d55;
+@nileblue: #3d8e95;
+@oechid: #c69cc5;
+@oldrose: #c67a85;
+@olive: #5c5424;
+@olivedrab: #655f47;
+@olivegreen: #575531;
+@orange: #ef810f;
+@orientalblue: #304285;
+@pansy: #433171;
+@peach: #e8bda5;
+@peacockblue: #006e7b;
+@peacockgreen: #007d7f;
+@pearlgrey: #aaa;
+@pink: #ea9198;
+@poppyred: #df334e;
+@prussianblue: #3a4861;
+@purple: #a757a8;
+@rawsienna: #b1632a;
+@rawumber: #765b1b;
+@red: #df3447;
+@rose: #db3561;
+@rosegrey: #8c8080;
+@rosepink: #ee8ea0;
+@rosered: #ca4775;
+@rubyred: #b90b50;
+@salmonpink: #ff9e8c;
+@saxeblue: #5a7993;
+@scarlet: #de3838;
+@seagreen: #97b64d;
+@sepia: #483c2c;
+@shellpink: #f9c9b9;
+@signalred: #ce2143;
+@silvergrey: #9c9c9c;
+@skyblue: #89bdde;
+@skygrey: #b3b8bb;
+@slategrey: #515356;
+@snowwhite: #f0f0f0;
+@steelgrey: #6d696f;
+@strawberry: #bb004b;
+@tan: #9e6c3f;
+@terracotta: #a95045;
+@tomatored: #df3447;
+@turquoiseblue: #009dbf;
+@ultramarineblue: #384d98;
+@vermilion: #ef454a;
+@violet: #714c99;
+@viridian: #006d56;
+@white: #fff;
+@winered: #80273f;
+@wistaria: #7967c3;
+@yellow: #f4d500;
+@yellowocher: #b8883b;
+//
+html {
+    color: @lampblack;
+}
+
+.amber {
+    .color(@amber);
+}
+
+.applegreen {
+    .color(@applegreen);
+}
+
+.apricot {
+    .color(@apricot);
+}
+
+.ashgrey {
+    .color(@ashgrey);
+}
+
+.babyblue {
+    .color(@babyblue);
+}
+
+.babypink {
+    .color(@babypink);
+}
+
+.beige {
+    .color(@beige);
+}
+
+.billiardgreen {
+    .color(@billiardgreen);
+}
+
+.black {
+    .color(@black);
+}
+
+.blond {
+    .color(@blond);
+}
+
+.blue {
+    .color(@blue);
+}
+
+.bordeaux {
+    .color(@bordeaux);
+}
+
+.bottlegreen {
+    .color(@bottlegreen);
+}
+
+.bronze {
+    .color(@bronze);
+}
+
+.brown {
+    .color(@brown);
+}
+
+.buff {
+    .color(@buff);
+}
+
+.burgundy {
+    .color(@burgundy);
+}
+
+.burntsienna {
+    .color(@burntsienna);
+}
+
+.burntumber {
+    .color(@burntumber);
+}
+
+.canaryyellow {
+    .color(@canaryyellow);
+}
+
+.carmine {
+    .color(@carmine);
+}
+
+.carrotorange {
+    .color(@carrotorange);
+}
+
+.ceruleanblue {
+    .color(@ceruleanblue);
+}
+
+.charcoalgrey {
+    .color(@charcoalgrey);
+}
+
+.chartreusegreen {
+    .color(@chartreusegreen);
+}
+
+.cherrypink {
+    .color(@cherrypink);
+}
+
+.chinesered {
+    .color(@chinesered);
+}
+
+.chocolate {
+    .color(@chocolate);
+}
+
+.chromeyellow {
+    .color(@chromeyellow);
+}
+
+.cobaltblue {
+    .color(@cobaltblue);
+}
+
+.cobaltgreen {
+    .color(@cobaltgreen);
+}
+
+.cochinealred {
+    .color(@cochinealred);
+}
+
+.cocoabrown {
+    .color(@cocoabrown);
+}
+
+.coralred {
+    .color(@coralred);
+}
+
+.cork {
+    .color(@cork);
+}
+
+.creamyellow {
+    .color(@creamyellow);
+}
+
+.cyan {
+    .color(@cyan);
+}
+
+.ecrubeige {
+    .color(@ecrubeige);
+}
+
+.emeraldgreen {
+    .color(@emeraldgreen);
+}
+
+.forestgreen {
+    .color(@forestgreen);
+}
+
+.goldenyellow {
+    .color(@goldenyellow);
+}
+
+.grassgreen {
+    .color(@grassgreen);
+}
+
+.green {
+    .color(@green);
+}
+
+.grey {
+    .color(@grey);
+}
+
+.heliotrope {
+    .color(@heliotrope);
+}
+
+.horizonblue {
+    .color(@horizonblue);
+}
+
+.hyacinth {
+    .color(@hyacinth);
+}
+
+.ironblue {
+    .color(@ironblue);
+}
+
+.ivory {
+    .color(@ivory);
+}
+
+.ivygreen {
+    .color(@ivygreen);
+}
+
+.jaunebrillant {
+    .color(@jaunebrillant);
+}
+
+.khaki {
+    .color(@khaki);
+}
+
+.lampblack {
+    .color(@lampblack);
+}
+
+.lavender {
+    .color(@lavender);
+}
+
+.leafgreen {
+    .color(@leafgreen);
+}
+
+.leghorn {
+    .color(@leghorn);
+}
+
+.lemonyellow {
+    .color(@lemonyellow);
+}
+
+.lilac {
+    .color(@lilac);
+}
+
+.magenta {
+    .color(@magenta);
+}
+
+.malachitegreen {
+    .color(@malachitegreen);
+}
+
+.mandarinorange {
+    .color(@mandarinorange);
+}
+
+.marigold {
+    .color(@marigold);
+}
+
+.marineblue {
+    .color(@marineblue);
+}
+
+.maroon {
+    .color(@maroon);
+}
+
+.mauve {
+    .color(@mauve);
+}
+
+.midnightblue {
+    .color(@midnightblue);
+}
+
+.mintgreen {
+    .color(@mintgreen);
+}
+
+.nailpink {
+    .color(@nailpink);
+}
+
+.naplesyellow {
+    .color(@naplesyellow);
+}
+
+.navyblue {
+    .color(@navyblue);
+}
+
+.nileblue {
+    .color(@nileblue);
+}
+
+.oechid {
+    .color(@oechid);
+}
+
+.oldrose {
+    .color(@oldrose);
+}
+
+.olive {
+    .color(@olive);
+}
+
+.olivedrab {
+    .color(@olivedrab);
+}
+
+.olivegreen {
+    .color(@olivegreen);
+}
+
+.orange {
+    .color(@orange);
+}
+
+.orientalblue {
+    .color(@orientalblue);
+}
+
+.pansy {
+    .color(@pansy);
+}
+
+.peach {
+    .color(@peach);
+}
+
+.peacockblue {
+    .color(@peacockblue);
+}
+
+.peacockgreen {
+    .color(@peacockgreen);
+}
+
+.pearlgrey {
+    .color(@pearlgrey);
+}
+
+.pink {
+    .color(@pink);
+}
+
+.poppyred {
+    .color(@poppyred);
+}
+
+.prussianblue {
+    .color(@prussianblue);
+}
+
+.purple {
+    .color(@purple);
+}
+
+.rawsienna {
+    .color(@rawsienna);
+}
+
+.rawumber {
+    .color(@rawumber);
+}
+
+.red {
+    .color(@red);
+}
+
+.rose {
+    .color(@rose);
+}
+
+.rosegrey {
+    .color(@rosegrey);
+}
+
+.rosepink {
+    .color(@rosepink);
+}
+
+.rosered {
+    .color(@rosered);
+}
+
+.rubyred {
+    .color(@rubyred);
+}
+
+.salmonpink {
+    .color(@salmonpink);
+}
+
+.saxeblue {
+    .color(@saxeblue);
+}
+
+.scarlet {
+    .color(@scarlet);
+}
+
+.seagreen {
+    .color(@seagreen);
+}
+
+.sepia {
+    .color(@sepia);
+}
+
+.shellpink {
+    .color(@shellpink);
+}
+
+.signalred {
+    .color(@signalred);
+}
+
+.silvergrey {
+    .color(@silvergrey);
+}
+
+.skyblue {
+    .color(@skyblue);
+}
+
+.skygrey {
+    .color(@skygrey);
+}
+
+.slategrey {
+    .color(@slategrey);
+}
+
+.snowwhite {
+    .color(@snowwhite);
+}
+
+.steelgrey {
+    .color(@steelgrey);
+}
+
+.strawberry {
+    .color(@strawberry);
+}
+
+.tan {
+    .color(@tan);
+}
+
+.terracotta {
+    .color(@terracotta);
+}
+
+.tomatored {
+    .color(@tomatored);
+}
+
+.turquoiseblue {
+    .color(@turquoiseblue);
+}
+
+.ultramarineblue {
+    .color(@ultramarineblue);
+}
+
+.vermilion {
+    .color(@vermilion);
+}
+
+.violet {
+    .color(@violet);
+}
+
+.viridian {
+    .color(@viridian);
+}
+
+.white {
+    .color(@white);
+}
+
+.winered {
+    .color(@winered);
+}
+
+.wistaria {
+    .color(@wistaria);
+}
+
+.yellow {
+    .color(@yellow);
+}
+
+.yellowocher {
+    .color(@yellowocher);
+}

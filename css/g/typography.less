@@ -1,0 +1,109 @@
+// main: ../g.less
+.font-size(@n) {
+    // p:1, q:.618033988749895
+    @a: (1em + sqrt(3.47213595499958)) / 2;
+    @b: (1em - sqrt(3.47213595499958)) / 2;
+    @c: pow(@a, @n);
+    @d: pow(@b, @n);
+    font-size: (@c - @d) / (@a - @b);
+}
+
+.bold,
+b,
+strong {
+    font-weight: 700;
+}
+
+.big,
+big {
+    font-size: @em;
+}
+
+.del,
+del {
+    text-decoration: line-through;
+}
+
+.italic,
+i,
+em {
+    font-style: italic;
+}
+
+.mark,
+mark {
+    padding: 0 @margin;
+}
+
+.nobreak {
+    white-space: nowrap;
+}
+
+.paragraph,
+p,
+figcaption {
+    margin-bottom: @margin;
+}
+
+.small,
+small {
+    font-size: 1em / @em;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+blockquote,
+dd,
+div,
+dl,
+dt,
+figure,
+figcaption,
+hr,
+li,
+main,
+ol,
+p,
+pre,
+ul {
+    line-height: @em;
+}
+
+h1 {
+    .font-size(6);
+}
+
+h2 {
+    .font-size(5);
+}
+
+h3 {
+    .font-size(4);
+}
+
+h4 {
+    .font-size(3);
+}
+
+h5 {
+    .font-size(2);
+}
+
+h6 {
+    .font-size(1);
+}
+
+hr {
+    margin-bottom: @margin;
+    margin-top: @margin;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: Meiryo, Tahoma, Verdana, Arial, sans-serif;
+    font-size: 18px;
+    line-height: @em;
+}

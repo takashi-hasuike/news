@@ -1,0 +1,208 @@
+// main: ../g.less
+
+.width(@m, @n, @r: 0%) {
+
+    // 101.618033988749894%
+
+    width: (100 - @r * @m) / @m * @n + @r * (@n - 1);
+}
+
+.columns();
+.columns(@n: 10) when (@n > 1) {
+
+    .columns(@n - 1);
+    .columns-@{n} {
+
+        &,
+        &.fix {
+            //
+            -moz-column-break-inside: avoid;
+            -moz-column-count: @n;
+            -moz-column-fill: auto;
+            -moz-column-gap: @ratio;
+            //
+            -webkit-column-break-inside: avoid;
+            -webkit-column-count: @n;
+            -webkit-column-fill: auto;
+            -webkit-column-gap: @ratio;
+            //
+            column-break-inside: avoid;
+            column-count: @n;
+            column-fill: auto;
+            column-gap: @ratio;
+        }
+    }
+}
+
+.split();
+.split(@m: 10) when (@m > 1) {
+
+    .split(@m - 1);
+    .split-@{m} {
+
+        &,
+        &.fix {
+
+            margin-left: -@ratio;
+            margin-top: -@ratio;
+
+            > * {
+                float: left;
+                margin-left: @ratio;
+                margin-top: @ratio;
+                position: static;
+
+                // a response.
+
+                .width(@m, 1, @ratio);
+            }
+
+            .span();
+            .span(@n: @m) when (@n > 1) {
+                .span(@n - 1);
+                > .span-@{n} {
+
+                    // n response.
+
+                    .width(@m, @n, @ratio);
+                }
+            }
+        }
+
+        &:after,
+        & > :nth-child(@{m}n+1) {
+            clear: both;
+        }
+
+        &:after,
+        &:before {
+            content: '';
+            display: table;
+        }
+
+        &.collapse,
+        &.collapse.fix {
+
+            margin-left: 0;
+            margin-top: 0;
+
+            > * {
+                margin-left: 0;
+                margin-top: 0;
+
+                // a response.
+
+                .width(@m, 1);
+            }
+
+            .span();
+            .span(@n: @m) when (@n > 1) {
+                .span(@n - 1);
+                > .span-@{n} {
+
+                    // n response.
+
+                    .width(@m, @n);
+                }
+            }
+        }
+    }
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.fit {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.margin {
+    margin: @margin;
+}
+
+.pinch {
+    margin-left: @margin;
+    margin-right: @margin;
+}
+
+.press {
+    margin-bottom: @margin;
+    margin-top: @margin;
+}
+
+.round {
+    border-radius: 3px;
+    &.all { border-radius: 50%; }
+    &.semi { border-radius: 25%; }
+}
+
+@media (max-width: 480px) {
+
+    .columns();
+    .columns(@n: 10) when (@n > 1) {
+
+        .columns(@n - 1);
+        .columns-@{n} {
+
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+            column-count: 1;
+        }
+    }
+
+    .split();
+    .split(@m: 10) when (@m > 1) {
+
+        .split(@m - 1);
+        .split-@{m} {
+
+            &,
+            &.collapse {
+
+                margin-left: 0;
+                margin-top: 0;
+
+                > * {
+                    margin-left: 0;
+                    margin-top: 0;
+                    width: 100%;
+                }
+
+                .span();
+                .span(@n: @m) when (@n > 1) {
+                    .span(@n - 1);
+                    > .span-@{n} {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .justify {
+
+        &.margin {
+            margin: 0;
+        }
+
+        &.pinch {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &.press {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+}

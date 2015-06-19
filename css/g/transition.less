@@ -1,0 +1,24 @@
+// main: ../g.less
+.scrollable {
+    //
+    -webkit-overflow-scrolling: touch;
+    //
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.transitionable {
+    //
+    -moz-backface-visibility: hidden;
+    -moz-transform-origin: center center;
+    -moz-transform-style: flat;
+    //
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-origin: center center;
+    -webkit-transform-style: flat;
+    //
+    backface-visibility: hidden;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+}
